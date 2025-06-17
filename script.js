@@ -1,12 +1,34 @@
 // Configuração de eventos somente após o HTML estar carregado
+
 window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('btnCalcular')
-          .addEventListener('click', calculaCargaTermica);
-  document.getElementById('btnGrafico')
-          .addEventListener('click', gerarGrafico);
-  document.getElementById('btnPdf')
-          .addEventListener('click', gerarPDF);
+  // Isto só roda depois que todo o HTML foi processado e os botões existem no DOM
+  console.log('DOM carregado – agora amarrando eventos');
+  
+  const btnCalcular = document.getElementById('btnCalcular');
+  const btnGrafico  = document.getElementById('btnGrafico');
+  const btnPdf      = document.getElementById('btnPdf');
+
+  if (!btnCalcular || !btnGrafico || !btnPdf) {
+    console.error('Não encontrei um ou mais botões. IDs incorretos?');
+    return;
+  }
+
+  btnCalcular.addEventListener('click', () => {
+    console.log('Clique em Calcular recebido');
+    calculaCargaTermica();
+  });
+
+  btnGrafico.addEventListener('click', () => {
+    console.log('Clique em Mostrar Gráfico recebido');
+    gerarGrafico();
+  });
+
+  btnPdf.addEventListener('click', () => {
+    console.log('Clique em Gerar PDF recebido');
+    gerarPDF();
+  });
 });
+
 let ultimoResultado = {};
 
 function calculaCargaTermica() {
