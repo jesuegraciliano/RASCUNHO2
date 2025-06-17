@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIR - Carga Térmica de Resfriados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- Logotipo -->
+    <img src="logoifsc.png" alt="Logo IFSC" class="logo">
+    <!-- Título e nota -->
+    <h1>PIR - Carga Térmica de Resfriados</h1>
+    <p class="info">Válido apenas para câmaras de pequeno porte (&lt; 3TR).</p>
+
+    <form id="calcForm">
+      <fieldset>
+        <legend>Dados de Entrada</legend>
+        <label>Nome do Cliente:
+          <input type="text" id="cliente" placeholder="Ex.: João Silva" required>
+        </label>
+        <label>Data do Cálculo:
+          <input type="date" id="dataCalculo" required>
+        </label>
+        <label>Largura (m):
+          <input type="text" id="largura" placeholder="3,36" required>
+        </label>
+        <label>Comprimento (m):
+          <input type="text" id="comprimento" placeholder="3,36" required>
+        </label>
+        <label>Altura (m):
+          <input type="text" id="altura" placeholder="2,50" required>
+        </label>
+        <label>Movimento diário (kg):
+          <input type="text" id="movimento" placeholder="1500" required>
+        </label>
+        <label>Temperatura externa (°C):
+          <input type="text" id="tempExterna" placeholder="35" required>
+        </label>
+        <label>Temperatura interna (°C):
+          <input type="text" id="tempInterna" placeholder="2" required>
+        </label>
+        <label>Temperatura de entrada do produto (°C):
+          <input type="text" id="tempProduto" placeholder="25" required>
+        </label>
+      </fieldset>
+      <button type="button" id="btnCalcular">Calcular</button>
+      <button type="button" id="btnGrafico">Mostrar Gráfico</button>
+      <button type="button" id="btnPdf">Gerar PDF</button>
+    </form>
+
+    <section id="resultado">
+      <p>Preencha os dados e clique em Calcular.</p>
+    </section>
+
+    <!-- Container do gráfico -->
+    <div id="chartContainer">
+      <canvas id="chart"></canvas>
+    </div>
+  </main>
+
+  <!-- Bibliotecas externas -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
