@@ -21,6 +21,10 @@ function calculaCargaTermica() {
   const Ti         = parseFloat(document.getElementById('tempInterna').value.replace(',', '.'));
   const Tp         = parseFloat(document.getElementById('tempProduto').value.replace(',', '.'));
 
+  function calculaCargaTermica() {
+  console.log('Botão Calcular acionado');
+  // resto dos cálculos…
+}
   // Cálculos básicos
   const areaPiso   = L * C;
   const volume     = L * C * H;
