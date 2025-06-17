@@ -1,8 +1,12 @@
-// Configuração de eventos
-document.getElementById('btnCalcular').addEventListener('click', calculaCargaTermica);
-document.getElementById('btnGrafico').addEventListener('click', gerarGrafico);
-document.getElementById('btnPdf').addEventListener('click', gerarPDF);
-
+// Configuração de eventos somente após o HTML estar carregado
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('btnCalcular')
+          .addEventListener('click', calculaCargaTermica);
+  document.getElementById('btnGrafico')
+          .addEventListener('click', gerarGrafico);
+  document.getElementById('btnPdf')
+          .addEventListener('click', gerarPDF);
+});
 let ultimoResultado = {};
 
 function calculaCargaTermica() {
